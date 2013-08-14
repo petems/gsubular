@@ -1,0 +1,14 @@
+%p It's like Rubular! But for y'know...Gsub!
+
+#gsub_answer
+#gsub_error
+
+#gsub_div
+  %form#gsub_form{:method=>"POST", :action=>"/"}
+    %input#test_string{:name=>"test_string"}
+    %span< .gsub!(
+    %span< /
+    %input#gsub_pattern_input{:name=>"pattern"}
+    %span /,'
+    %input#gsub_replacement_input{:name=>"replacement"}
+    %span ')

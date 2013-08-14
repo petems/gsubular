@@ -1,0 +1,19 @@
+!!! Strict
+%html
+  %head
+    %title Gsubular
+    %link{:rel=>"stylesheet", :type=>"text/css", :media=>"screen", :charset=>"utf-8", :href=>"/style.css"}
+    %script{:src=>"http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js", :type=>"text/javascript"}
+    %script{:src=>"/javascripts/application.js", :type=>"text/javascript"}
+
+  %body
+  .row
+    #container.col.gu24
+      %h1 Gsubular
+      = yield
+
+= partial :footer
+
+
+
+

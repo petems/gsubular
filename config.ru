@@ -1,0 +1,3 @@
+require './gsubular'
+
+run Gsubular

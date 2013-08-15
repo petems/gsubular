@@ -5,8 +5,8 @@ Exec {
 
 class { 'nginx': }
 
-file { "/etc/profile.d/rack_prod.sh"
-  content => "export RACK_ENV=production",
+file { "/etc/profile.d/rack_prod.sh":
+  content => 'export RACK_ENV=production',
   mode    => '0540',
   owner   => 'root',
   group   => 'root',

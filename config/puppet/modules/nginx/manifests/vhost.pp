@@ -13,5 +13,10 @@ define nginx::vhost($source=false, $template=false) {
     path  => $fname,
     owner => nginx,
     mode  => '0644',
+    require =>
+  }
+  exec{"create-nginx-user":
+    command => '/usr/sbin/useradd nginx'
+    unless => 'grep "^nginx:" /etc/passwd'
   }
 }

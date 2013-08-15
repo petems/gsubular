@@ -16,7 +16,7 @@ file { "/etc/profile.d/rack_prod.sh":
 class { ruby: version => '2.0.0-p0' }
 
 exec {'gem-install-bundler':
-  command=>'/usr/bin/gem install bundler',
-  unless=>'/usr/bin/gem which bundler',
-  require=>Class['ruby']
+  command =>'/usr/bin/gem install bundler',
+  unless  =>'/usr/bin/gem which bundler',
+  require =>Class['ruby'],
 }

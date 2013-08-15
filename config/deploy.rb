@@ -31,6 +31,8 @@ default_run_options[:pty] = true
 
 set :owner, ENV['USER']
 
+depend :remote,  :command, "puppet"
+
 before 'deploy', 'deploy:check'
 
 namespace :deploy do

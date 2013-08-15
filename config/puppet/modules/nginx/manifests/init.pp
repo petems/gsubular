@@ -16,6 +16,5 @@ class nginx {
   }
   exec {'create-nginx-user':
     command => '/usr/sbin/useradd nginx'
-    unless => 'grep "^nginx:" /etc/passwd'
   }
 }

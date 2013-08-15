@@ -6,6 +6,7 @@ gem 'sass'
 gem 'json'
 gem 'sinatra-partial'
 gem 'capistrano'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'foreman'

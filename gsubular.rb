@@ -1,17 +1,12 @@
 require 'sinatra/base'
 require 'sinatra/partial'
+require 'newrelic_rpm'
 require 'haml'
 require 'sass'
 require 'json'
 
 class Gsubular < Sinatra::Base
   register Sinatra::Partial
-
-  if development?
-    require "sinatra/reloader"
-    require 'rack-livereload'
-    use Rack::LiveReload
-  end
 
   get '/style.css' do
     headers 'Content-Type' => 'text/css; charset=utf-8'

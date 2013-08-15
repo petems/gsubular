@@ -52,7 +52,6 @@ namespace :deploy do
   task :cold do
     deploy.update
     deploy.start
-    deploy.nginx_restart
   end
 end
 

@@ -14,4 +14,8 @@ class nginx {
     subscribe =>File['/etc/nginx'],
     enable =>true,ensure=>running
   }
+  exec {'create-nginx-user':
+    command => '/usr/sbin/useradd nginx'
+    unless => 'grep "^nginx:" /etc/passwd'
+  }
 }

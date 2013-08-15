@@ -5,12 +5,12 @@ Exec {
 
 class { 'nginx': }
 
-nginx::vhost {'gsubular':
-  template=>'nginx.conf.erb',
-}
-
 file { "/etc/profile.d/rack_prod.sh"
-  content => "export RACK_ENV=production"
+  content => "export RACK_ENV=production",
+  mode    => '0540',
+  owner   => 'root',
+  group   => 'root',
+  ensure  => present,
 }
 
 class { ruby: version => '2.0.0-p0' }

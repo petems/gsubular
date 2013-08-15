@@ -5,4 +5,4 @@
 
 	$ git clone git@github.com:petems/gsubular.git
 	$ bundle install
-	$ bundle exec rackup -p 4567
+	$ foreman start

@@ -1,0 +1,81 @@
+# Main nginx config. More info at http://wiki.nginx.org/Main
+
+# Main Module -  see http://wiki.nginx.org/NginxHttpMainModule ____________________________________
+
+user              vagrant;
+worker_processes  3;
+
+error_log  /var/log/nginx/error.log;
+
+pid        /var/run/nginx.pid;
+
+# Events Module - see http://wiki.nginx.org/NginxHttpEventsModule _________________________________
+
+events {
+    worker_connections  1024;
+}
+
+# HTTP Core Module - see http://wiki.nginx.org/NginxHttpCoreModule ________________________________
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main      '$remote_addr - $remote_user [$time_local] "$request" '
+                          '$status $body_bytes_sent "$http_referer" '
+                          '"$http_user_agent" "$http_x_forwarded_for"';
+
+    log_format  upstream  '$remote_addr - $remote_user [$time_local] "$request" '
+                          '$status $body_bytes_sent "$http_referer" '
+                          '"$http_user_agent" "$http_x_forwarded_for" '
+                          '- $upstream_response_time $request_time';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+
+    keepalive_timeout  65;
+
+    gzip on;
+    gzip_min_length 1500;
+    gzip_buffers 64 8k;
+    gzip_comp_level 2;
+    gzip_types text/plain text/css application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+    gzip_disable "MSIE [1-6]\.";
+    gzip_proxied any;
+    gzip_vary on;
+
+    # Use a SSL cache
+    ssl_session_cache    shared:SSL:10m;
+    ssl_session_timeout  10m;
+    ssl_ciphers ALL:!kEDH!ADH:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
+    ssl_prefer_server_ciphers on;
+    ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
+
+    server {
+        listen       80;
+        server_name  _;
+
+        #access_log  logs/host.access.log  main;
+
+        location / {
+            root   /usr/share/nginx/html;
+            index  index.html index.htm;
+        }
+
+        error_page  404              /404.html;
+        location = /404.html {
+            root   /usr/share/nginx/html;
+        }
+
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   /usr/share/nginx/html;
+        }
+    }
+
+    include /etc/nginx/conf.d/*.site.conf;
+
+}

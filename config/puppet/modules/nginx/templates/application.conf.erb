@@ -1,0 +1,42 @@
+# application configuration for <%= [@title,@server_name].join("/") %>
+
+upstream application_http_upstream {
+  server <%= @upstream_http_socket %>;
+}
+
+upstream application_xhr_upstream {
+  server <%= @upstream_xhr_socket %>;
+}
+
+server {
+  listen 80 ;
+  server_name <%= @server_name %> ;
+
+  rewrite  ^(.*) https://<%= @server_name %>$1 permanent;
+}
+
+server {
+  listen 443 default ssl;
+  server_name <%= @server_name %> ;
+
+  access_log  /var/log/nginx/<%= @application_name %>.access.log  upstream;
+  error_log  /var/log/nginx/<%= @application_name %>.error.log;
+
+  ssl_certificate       <%= @ssl_certificate %>;
+  ssl_certificate_key   <%= @ssl_key %>;
+
+  include conf.d/proxy.conf ;
+
+  location / {
+
+    root '<%= @application_root %>/public' ;
+
+    autoindex off ;
+  }
+
+  recursive_error_pages on ;
+  error_page   502  /502.html;
+  location = /502.html {
+      root '<%= @application_root %>/public' ;
+  }
+}

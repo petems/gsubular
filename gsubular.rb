@@ -7,6 +7,12 @@ require 'json'
 class Gsubular < Sinatra::Base
   register Sinatra::Partial
 
+  if development?
+    require "sinatra/reloader"
+    require 'rack-livereload'
+    use Rack::LiveReload
+  end
+
   get '/style.css' do
     headers 'Content-Type' => 'text/css; charset=utf-8'
     sass :style
@@ -19,6 +25,7 @@ class Gsubular < Sinatra::Base
   # create
   post '/' do
     response = {}
+    puts 'test'
     begin
       str = params[:test_string]
       regex_do_this = Regexp.new(params[:pattern])

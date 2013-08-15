@@ -51,6 +51,7 @@ define rubyinstall($version = $title) {
   }
 
   exec { "ruby-install-$version":
+    warning("This can take a long time...")
     command => "/opt/ruby-build/bin/ruby-build $version /opt/ruby-$version",
     creates => "/opt/ruby-$version",
     path    => ["/usr/sbin", "/usr/bin", "/sbin", "/bin"],

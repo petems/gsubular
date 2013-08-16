@@ -9,12 +9,11 @@
     = NewRelic::Agent.browser_timing_header
 
   %body
-  .row
-    #container.col.gu24
-      %h1 Gsubular
-      = yield
+  #container
+    %h1 Gsubular
+    = yield
 
-= partial :footer
+    = partial :footer
 
 
 

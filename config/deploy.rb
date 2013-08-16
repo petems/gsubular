@@ -1,6 +1,7 @@
 require 'capistrano/ext/puppetize'
 require 'bundler/capistrano'
 require 'capistrano/ext/multistage'
+require 'new_relic/recipes'
 
 set :bundle_cmd, "bundle"
 set :bundle_without, [:development, :test, :profile]
@@ -34,6 +35,8 @@ set :owner, ENV['USER']
 depend :remote,  :command, "puppet"
 
 before 'deploy', 'deploy:check'
+
+after "deploy:update", "newrelic:notice_deployment"
 
 namespace :deploy do
   task :start, :roles => [:web, :app] do

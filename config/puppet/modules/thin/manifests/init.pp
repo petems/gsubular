@@ -23,6 +23,7 @@ class thin (
           provider => 'gem',
         }
      }
+    'package': { package {'thin': } }
     default  : { fail "Unsupported package type ${package_type}" }
   }
 

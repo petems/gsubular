@@ -22,7 +22,7 @@ exec {'gem-install-bundler':
 
 class {'thin': package_type => 'gem'}
 
-thin::app {'myapp':
+thin::app {'gsubular':
   ensure  => present,
   address => 'localhost',
   port    => '5000',

@@ -5,7 +5,7 @@ tag: gsubular
 chdir: /opt/gsubular
 user: root
 group: root
-rackup: /opt/gsubular/config.ru
+rackup: /opt/gsubular/current/config.ru
 log: /var/log/thin/gsubular.log
 pid: /var/run/thin/gsubular.pid
 daemonize: true

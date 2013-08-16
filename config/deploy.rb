@@ -40,11 +40,11 @@ after "deploy:update", "newrelic:notice_deployment"
 
 namespace :deploy do
   task :start, :roles => [:web, :app] do
-    run "cd #{deploy_to}/current"
+    run "cd #{deploy_to}/current && bundle exec thin -C thin/gsubular.yml -R config.ru start"
   end
 
   task :stop, :roles => [:web, :app] do
-    run "cd #{deploy_to}/current"
+    run "cd #{deploy_to}/current && bundle exec thin -C thin/gsubular.yml -R config.ru stop"
   end
 
   task :restart, :roles => [:web, :app] do

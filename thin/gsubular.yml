@@ -1,0 +1,12 @@
+# gsubular.yml
+address: localhost
+port: 5000
+tag: gsubular
+chdir: /opt/gsubular
+user: root
+group: root
+rackup: /opt/gsubular/config.ru
+log: /var/log/thin/gsubular.log
+pid: /var/run/thin/gsubular.pid
+daemonize: true
+servers: 1

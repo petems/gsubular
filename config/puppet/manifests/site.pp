@@ -20,14 +20,7 @@ exec {'gem-install-bundler':
   require =>Class['ruby'],
 }
 
-class {'thin': package_type => 'gem'}
-
-thin::app {'gsubular':
-  ensure  => present,
-  address => 'localhost',
-  port    => '5000',
-  chdir   => '/opt/gsubular',
-  user    => 'root',
-  group   => 'root',
-  rackup  => '/opt/gsubular/config.ru',
+exec {'gem-install-thin':
+  command =>'/usr/bin/gem install thin',
+  require =>Class['ruby'],
 }

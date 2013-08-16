@@ -24,3 +24,5 @@ exec {'gem-install-thin':
   command =>'/usr/bin/gem install thin',
   require =>Class['ruby'],
 }
+
+class {'time':}

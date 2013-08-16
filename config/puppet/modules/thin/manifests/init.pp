@@ -16,8 +16,13 @@ class thin (
 ) {
 
   case $package_type {
-    'gem'    : { include ruby::gem::thin }
-    'package': { include ruby::package::thin }
+    'gem'    :
+        {
+          package { 'thin':
+          ensure   => 'installed',
+          provider => 'gem',
+        }
+     }
     default  : { fail "Unsupported package type ${package_type}" }
   }
 

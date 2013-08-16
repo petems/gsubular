@@ -20,7 +20,10 @@ exec {'gem-install-bundler':
   require =>Class['ruby'],
 }
 
-class {'thin': package_type => 'gem'}
+package { 'thin':
+    ensure   => 'installed',
+    provider => 'gem',
+}
 
 thin::app {'myapp':
   ensure  => present,

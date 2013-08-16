@@ -16,4 +16,10 @@ describe 'The Gsubular App' do
     last_response.should be_ok
     last_response.body.should include "<title>Gsubular</title>"
   end
+
+  it "shows the ping page" do
+    get '/ping'
+    last_response.should be_ok
+    last_response.body.should include "pong"
+  end
 end

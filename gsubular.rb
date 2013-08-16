@@ -20,7 +20,6 @@ class Gsubular < Sinatra::Base
   # create
   post '/' do
     response = {}
-    puts 'test'
     begin
       str = params[:test_string]
       regex_do_this = Regexp.new(params[:pattern])
@@ -32,6 +31,10 @@ class Gsubular < Sinatra::Base
     response[:gsub_string] = []
     response[:gsub_string].push(gsubbed_string)
     response.to_json
+  end
+
+  get '/ping' do
+    'pong'
   end
 
   run! if app_file == $0

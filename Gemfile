@@ -7,6 +7,7 @@ gem 'json'
 gem 'sinatra-partial'
 gem 'capistrano'
 gem 'newrelic_rpm'
+gem 'thin'
 
 group :development, :test do
   gem 'foreman'

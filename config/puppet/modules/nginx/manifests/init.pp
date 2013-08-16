@@ -15,6 +15,6 @@ class nginx {
     enable =>true,ensure=>running
   }
   exec {'create-nginx-user':
-    command => '/usr/sbin/useradd nginx'
+    command => 'id -u nginx &>/dev/null || /usr/sbin/useradd nginx'
   }
 }

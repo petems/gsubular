@@ -60,7 +60,7 @@ class thin (
     pattern    => $service_pattern,
     require    => [
       File[$config_dir,$log_dir,$pid_dir],
-      File["/etc/init.d/${service}"], Package['ruby-thin'],
+      File["/etc/init.d/${service}"], Package['thin'],
     ],
   }
 

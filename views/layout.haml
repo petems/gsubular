@@ -10,8 +10,9 @@
 
   %body
   #container
-    %h1 Gsubular
     = yield
+
+    = partial :regex_table
 
     = partial :footer
 

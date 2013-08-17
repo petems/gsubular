@@ -11,10 +11,12 @@ $(function() {
           result = "no matches"
         if(result == "null")
           result = "[EMPTY STRING]"
+        $("#gsub_answer").css('color', 'green');
         $("#gsub_answer").html(result);
       }
       else
-        $("#gsub_error").html(results.error);
+        $("#gsub_answer").css('color', 'red');
+        $("#gsub_answer").html(results.error);
     });
   })
 })

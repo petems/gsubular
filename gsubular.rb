@@ -1,6 +1,5 @@
 require 'sinatra/base'
 require 'sinatra/partial'
-require 'newrelic_rpm'
 require 'haml'
 require 'sass'
 require 'json'

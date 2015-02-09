@@ -7,12 +7,10 @@ gem 'haml'
 gem 'sass'
 gem 'json'
 gem 'sinatra-partial'
-gem 'capistrano'
-gem 'newrelic_rpm'
 gem 'thin'
+gem 'rake'
 
 group :development, :test do
   gem 'rspec'
   gem 'rack-test'
-  gem 'rake'
 end

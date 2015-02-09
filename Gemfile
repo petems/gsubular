@@ -9,8 +9,5 @@ gem 'json'
 gem 'sinatra-partial'
 gem 'thin'
 gem 'rake'
-
-group :development, :test do
-  gem 'rspec'
-  gem 'rack-test'
-end
+gem 'rspec'
+gem 'rack-test'

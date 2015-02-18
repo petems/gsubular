@@ -1,6 +1,6 @@
 #quickref
   %h3 Regex Quick Reference
-  %div{:style => "float:left"}
+  .left
     %table
       %tbody
         %tr
@@ -35,7 +35,7 @@
           %td
             %code \z
           %td End of string
-  %div{:style => "float:left"}
+  .left
     %table
       %tbody
         %tr
@@ -107,11 +107,15 @@
   #regex_options{:style => "text-align:center"}
     %p
       options:
-      %code i
+      %strong
+        i
       case insensitive
-      %code m
+      %strong
+        m
       make dot match newlines
-      %code x
+      %strong
+        x
       ignore whitespace in regex
-      %code o
+      %strong
+        o
       perform \#{...} substitutions only once

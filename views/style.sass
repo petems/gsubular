@@ -1,87 +1,71 @@
-html
-  :background-color #232323
-  :height 100%
-  :width 100%
-
-a
-  &:link
-    color: #c00
-  &:visited
-    color: #0c0
-  &:hover
-    color: #0cc
-  &:active
-    color: #ccc
-
 body
+  :background #000
   :text-align center
+  :font-family Oxygen, Monaco, Verdana
   :color #fff
-  :height 100%
-  :width 100%
-
-h1, h2
-  :font-family 'Alegreya', serif
-  :font-weight 700
-  :line-height 46px
-  :font-size 46px
-  :text-shadow 2px 1px 1px #000
-
-p, span
-  font-family: 'Roboto', sans-serif
-  font-size: 15px
-  line-height: 23px
-
-input
-  height: 20px
-  padding: 4px 6px
-  margin-bottom: 10px
-  font-size: 14px
-  line-height: 20px
-  vertical-align: middle
-  -webkit-border-radius: 4px
-  -moz-border-radius: 4px
-  border-radius: 4px
-
+h1
+  :color #97bf0d
+  :font-family Monaco, Verdana
+h2
+  :font-size 14px
+  :font-weight normal
 #container
-  :background-color rgba(255,255,255,0.4)
-  :height 80%
-  :width  75%
-  :-webkit-border-radius 4px
-  :-moz-border-radius 4px
-  :border-radius 4px
-  :margin 2% 8% 4% 8%
-  :border 20px solid #e6e6e6
-  :min-height 500px
+  :width 960px
+  :text-align left
+  :margin 0 auto
 
-#gsub_div
-  :width 93%
-  :height 100px
-  :padding 1%
+  form
+    label
+      :display block
+      :color #fff
+    input
+      :width 450px
+      :padding 3px
+      :font-size 14px
+    textarea
+      :width 460px
+      :height 150px
+      :font-size 14px
+      :font-family Monaco, Verdana
+      :padding 3px
+    span
+      :color #fff
+  #regex_input_wrapper
+    :overflow hidden
+    :margin-bottom 15px
+    span:first-child
+      :margin-right 3px
+    span:last-child
+      :margin-left 3px
+    span, input
+      :float left
+      :display block
+  #match
+    :background #a5a5a5
+    :padding 0 4px
 
-#gsub_answer
-  :color #ffffff
-  :margin-bottom 10px
-  :height 20px
-  :width 100%
+  #quickref
+    :border white 3px solid
+    :margin-top 10px
+    :padding 10px
+    :overflow hidden
 
-#test_string
-  :width 40%
+    h2
+      :color #97bf0d
+      :font-weight bold
+    .left:first-child
+      :margin-right 10px
 
-#gsub_replacement_input
-  :width 10%
+code
+  :width 100px
+  :display block
+  :font
+    :weight bold
+    :size 18px
 
-#gsub_pattern_input
-  :width 10%
+#regex_options
+  strong
+    :color red
 
-#quickref
-  :margin-top 5px
-  :padding 5px
-  :overflow hidden
-  :height 250px
-  h2
-    :color #97bf0d
-    :font-weight bold
-
-.footer-text
-  :margin-top 10px
-  :padding 5px
+.left
+  :float left

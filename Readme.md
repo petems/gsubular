@@ -1,6 +1,8 @@
 # Gsubular
 [Rubular](http://www.rubular.com), but for Gsub!
 
+Inspired heavily by [Rubex](https://github.com/keithnorm/Rubex/)
+
 See it in action on [Heroku](https://gsubular.herokuapp.com)
 
 # Running locally

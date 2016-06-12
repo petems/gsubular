@@ -13,13 +13,13 @@ describe 'The Gsubular App' do
 
   it "displays the title" do
     get '/'
-    last_response.should be_ok
-    last_response.body.should include "<title>Gsubular</title>"
+    expect(last_response).to be_ok
+    expect(last_response.body).to include "<title>Gsubular</title>"
   end
 
   it "shows the ping page" do
     get '/ping'
-    last_response.should be_ok
-    last_response.body.should include "pong"
+    expect(last_response).to be_ok
+    expect(last_response.body).to include "pong"
   end
 end

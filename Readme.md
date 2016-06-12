@@ -1,4 +1,6 @@
 # Gsubular
+[![Build Status](https://travis-ci.org/petems/gsubular.svg?branch=master)](https://travis-ci.org/petems/gsubular)
+
 [Rubular](http://www.rubular.com), but for Gsub!
 
 Inspired heavily by [Rubex](https://github.com/keithnorm/Rubex/)

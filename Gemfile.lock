@@ -1,12 +1,52 @@
+GIT
+  remote: https://github.com/petems/capybara-screenshot/
+  revision: 9c74604bead521847063650ec239abbb20e44bd3
+  branch: fix_empty_sinatra_root
+  specs:
+    capybara-screenshot (1.0.13)
+      capybara (>= 1.0, < 3)
+      launchy
+
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.4.0)
+    capybara (2.6.2)
+      addressable
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
+    cliver (0.3.2)
+    coderay (1.1.1)
     daemons (1.2.3)
     diff-lcs (1.2.5)
     eventmachine (1.2.0.1)
     haml (4.0.7)
       tilt
     json (1.8.3)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    method_source (0.8.2)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
+    mini_portile2 (2.1.0)
+    multi_json (1.12.1)
+    nokogiri (1.6.8)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
+    pkg-config (1.1.7)
+    poltergeist (1.9.0)
+      capybara (~> 2.1)
+      cliver (~> 0.3.1)
+      multi_json (~> 1.0)
+      websocket-driver (>= 0.2.0)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -33,18 +73,28 @@ GEM
       tilt (>= 1.3, < 3)
     sinatra-partial (1.0.0)
       sinatra (~> 1.4)
+    slop (3.6.0)
     thin (1.7.0)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
       rack (>= 1, < 3)
     tilt (2.0.5)
+    websocket-driver (0.6.4)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.2)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  capybara (= 2.6.2)
+  capybara-screenshot!
   haml
   json
+  poltergeist
+  pry
   rack-test
   rake
   rspec

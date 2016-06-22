@@ -1,5 +1,8 @@
-require 'rake'
-require 'rspec/core/rake_task'
+begin
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new(:spec)
+rescue LoadError
+end
 
 RSpec::Core::RakeTask.new(:spec)
 

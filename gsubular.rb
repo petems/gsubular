@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/partial'
 require 'haml'
-require 'sass'
+require 'sassc'
 require 'json'
 
 class Gsubular < Sinatra::Base

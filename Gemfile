@@ -4,7 +4,7 @@ ruby '2.6.2'
 
 gem 'sinatra'
 gem 'haml'
-gem 'sass'
+gem 'sassc'
 gem 'json'
 gem 'sinatra-partial'
 gem 'thin'

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.4'
+ruby '2.6.2'
 
 gem 'sinatra'
 gem 'haml'
@@ -16,7 +16,5 @@ group :test, :development do
   gem 'rack-test'
   gem 'capybara', '2.6.2'
   gem 'poltergeist'
-  gem 'capybara-screenshot', :git => 'https://github.com/petems/capybara-screenshot/',
-    :branch => 'fix_empty_sinatra_root'
 end
 
